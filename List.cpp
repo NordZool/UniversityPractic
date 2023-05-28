@@ -120,10 +120,7 @@ void SingleListStudents::sortLastName() {
 
         while(current->next != nullptr) {
             Node* nextNode = current->next;
-
-            //int currentScalar = current->lastName[0] >= 97 ? current->lastName[0] + 0 : current->lastName[0] + 32;
-            //int nextNodeScalar = nextNode->lastName[0] >= 97 ? nextNode->lastName[0] + 0 : nextNode->lastName[0] + 32;
-            if (current->lastName > nextNode->lastName) {
+            if (current->lastName > nextNode->lastName) { 
                 if (nextNode == head) {
                     head = current;
                 }
@@ -131,9 +128,9 @@ void SingleListStudents::sortLastName() {
                 nextNode->next = current;
 
                 if (!previor) {
-                    first = nextNode; // если до этого нету узлов, то следующий элемент станет первым при swap'е
+                    first = nextNode; 
                 } else {
-                    previor->next = nextNode; // иначе, прекрипить оставшийся узел к nextNode
+                    previor->next = nextNode; 
                 }
                 previor = nextNode;
             } else {
@@ -227,7 +224,7 @@ void SingleListStudents::print() {
 }
 
 void SingleListStudents::printInFile() {
-    FILE* printFile = fopen("data.txt", "wr");
+    FILE* printFile = fopen("data.txt", "wt");
     fprintf(printFile, "members: %d\n\n", size);
     Node* current = first;
 
